@@ -110,6 +110,37 @@ python main.py
 
 **Note**: The application runs in demonstration mode, showing example ESP rendering without actually attaching to a game process.
 
+### Building Compiled Versions
+
+You can compile the Python code into DLLs or create a standalone executable:
+
+#### Option 1: Build as DLL Extensions (.pyd files)
+```bash
+# Install build tools
+pip install cython wheel
+
+# Build Cython extensions (Windows DLLs)
+python setup.py build_ext --inplace
+```
+
+This creates compiled `.pyd` files (Windows DLLs):
+- `memory_reader_compiled.pyd`
+- `esp_compiled.pyd`
+- `overlay_compiled.pyd`
+
+#### Option 2: Build Standalone Executable
+```bash
+# Install PyInstaller
+pip install pyinstaller
+
+# Build executable with bundled DLLs
+python build_executable.py
+```
+
+This creates `dist/DeltaForce-ESP.exe` - a standalone executable with all dependencies bundled as DLLs inside.
+
+**See [BUILD.md](BUILD.md) for detailed build instructions.**
+
 ## 🎮 Features
 
 ### Core Features
