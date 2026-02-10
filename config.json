@@ -1,0 +1,38 @@
+{
+  "window": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "overlay_opacity": 0.8
+  },
+  "esp": {
+    "enabled": true,
+    "box_enabled": true,
+    "distance_enabled": true,
+    "health_bar_enabled": true,
+    "max_distance": 500.0
+  },
+  "colors": {
+    "enemy": [255, 0, 0, 200],
+    "teammate": [0, 255, 0, 200],
+    "local_player": [0, 0, 255, 200],
+    "box_thickness": 2.0
+  },
+  "hotkeys": {
+    "toggle_esp": "F1",
+    "toggle_boxes": "F2",
+    "toggle_distance": "F3",
+    "exit": "F10"
+  },
+  "game": {
+    "process_name": "DeltaForce.exe",
+    "view_matrix_offset": "0x0",
+    "player_list_offset": "0x0",
+    "local_player_offset": "0x0"
+  },
+  "rendering": {
+    "font_size": 12,
+    "box_padding": 5,
+    "text_offset_y": -20
+  }
+}
