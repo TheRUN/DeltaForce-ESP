@@ -141,3 +141,6 @@ Thumbs.db
 
 # Project specific
 config_local.json
+
+# Test files (optional)
+test_*.py
