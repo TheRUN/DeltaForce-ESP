@@ -1,4 +1,4 @@
-# Delta Force 2025 ESP Overlay - Educational Project
+# Delta Force 2025 ESP Overlay + DLL Injector - Educational Project
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,6 +13,7 @@ This software is designed as a school project to demonstrate and teach:
 - **Memory Management**: Process memory reading, pointer arithmetic
 - **3D Mathematics**: World-to-screen projection, coordinate transformations
 - **Software Architecture**: Clean code structure, design patterns, modularity
+- **Process Injection**: DLL injection techniques, Windows API programming
 
 **DO NOT:**
 - Use this in online multiplayer games
@@ -26,12 +27,12 @@ This software is designed as a school project to demonstrate and teach:
 
 ## 📋 Project Overview
 
-An ESP (Extra Sensory Perception) overlay system for Delta Force 2025, built with Python as an educational demonstration of advanced programming concepts. The project showcases:
+A comprehensive educational toolkit for Delta Force 2025, featuring:
 
-1. **OpenGL Rendering**: Transparent overlay windows with real-time graphics
-2. **Memory Reading**: Process attachment and memory inspection techniques
-3. **3D Graphics Math**: World-space to screen-space coordinate conversion
-4. **Game Development Concepts**: Entity systems, rendering pipelines, performance optimization
+1. **ESP (Extra Sensory Perception) Overlay System**: Transparent overlay with real-time graphics
+2. **DLL Injector**: Process injection tool demonstrating Windows API techniques
+
+Both components showcase advanced programming concepts including graphics rendering, memory manipulation, and system-level programming.
 
 ## 🎯 Learning Objectives
 
@@ -46,6 +47,12 @@ An ESP (Extra Sensory Perception) overlay system for Delta Force 2025, built wit
 - Reading process memory safely
 - Understanding pointer chains and offsets
 - Handling memory read errors gracefully
+
+### Process Injection (NEW)
+- Windows API programming
+- DLL injection techniques
+- Process privilege management
+- Security implications and detection
 
 ### Mathematics
 - 3D vector mathematics
@@ -63,14 +70,20 @@ An ESP (Extra Sensory Perception) overlay system for Delta Force 2025, built wit
 
 ```
 DeltaForce-ESP/
-├── main.py              # Application entry point and main loop
+├── main.py              # ESP overlay entry point
 ├── memory_reader.py     # Memory reading and process handling
 ├── overlay.py           # OpenGL overlay window and rendering
 ├── esp.py              # ESP logic and coordinate transformations
+├── injector.py         # DLL injection module (NEW)
+├── injector_gui.py     # DLL injector GUI (NEW)
 ├── config.json         # Configuration file
 ├── requirements.txt    # Python dependencies
+├── setup.py            # Build configuration
+├── build_executable.py # Executable builder
 ├── .gitignore         # Git ignore rules
-└── README.md          # This file
+├── README.md          # This file
+├── BUILD.md           # Build instructions
+└── INJECTOR.md        # DLL injector documentation (NEW)
 ```
 
 ## 🚀 Getting Started
@@ -143,7 +156,9 @@ This creates `dist/DeltaForce-ESP.exe` - a standalone executable with all depend
 
 ## 🎮 Features
 
-### Core Features
+### ESP Overlay System
+
+#### Core Features
 
 1. **Memory Reading Module** (`memory_reader.py`)
    - Process enumeration and discovery
@@ -172,7 +187,7 @@ This creates `dist/DeltaForce-ESP.exe` - a standalone executable with all depend
    - FPS management
    - Status UI
 
-### Hotkeys
+#### Hotkeys
 
 - **F1** - Toggle ESP on/off
 - **F2** - Toggle bounding boxes
@@ -180,13 +195,66 @@ This creates `dist/DeltaForce-ESP.exe` - a standalone executable with all depend
 - **F10** - Exit application
 - **ESC** - Exit application
 
-### Visual Elements
+#### Visual Elements
 
 - **Bounding Boxes**: 2D boxes around player positions
 - **Distance Indicators**: Show distance in meters
 - **Health Bars**: Visual health status (optional)
 - **Color Coding**: Different colors for teammates vs enemies
 - **Status UI**: FPS counter and feature toggles
+
+### DLL Injector (NEW)
+
+A comprehensive DLL injection tool for educational purposes.
+
+#### Features
+
+1. **DLL Injection Module** (`injector.py`)
+   - LoadLibrary injection method
+   - Process privilege elevation (SeDebugPrivilege)
+   - DLL validation
+   - Comprehensive error handling
+   - Educational comments explaining each step
+
+2. **Injector GUI** (`injector_gui.py`)
+   - User-friendly graphical interface
+   - Process selection from running processes
+   - DLL file browser
+   - Injection method selector
+   - Real-time log output
+   - Built with tkinter
+
+#### Injection Methods
+
+- **LoadLibrary**: Classic injection using CreateRemoteThread
+- **Manual Mapping**: Advanced technique (placeholder for future implementation)
+
+#### How to Use
+
+**Run GUI:**
+```bash
+python injector_gui.py
+```
+
+**Steps:**
+1. Select target process from the list
+2. Browse and select your DLL file
+3. Choose injection method
+4. Click "Inject DLL"
+
+**Programmatic Usage:**
+```python
+from injector import DLLInjector, InjectionMethod
+
+injector = DLLInjector()
+success, msg = injector.inject_dll(
+    process_id=1234,
+    dll_path="C:/path/to/your.dll",
+    method=InjectionMethod.LOAD_LIBRARY
+)
+```
+
+**See [INJECTOR.md](INJECTOR.md) for complete documentation.**
 
 ## ⚙️ Configuration
 
