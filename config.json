@@ -26,6 +26,7 @@
   },
   "game": {
     "process_name": "DeltaForce.exe",
+    "_comment": "Note: Offsets below are placeholders (0x0). Real offsets must be determined through reverse engineering",
     "view_matrix_offset": "0x0",
     "player_list_offset": "0x0",
     "local_player_offset": "0x0"

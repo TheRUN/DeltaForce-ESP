@@ -402,7 +402,7 @@ class Overlay:
             glBegin(GL_LINE_LOOP)
         
         for i in range(segments):
-            angle = 2.0 * 3.14159 * i / segments
+            angle = 2.0 * np.pi * i / segments
             dx = radius * np.cos(angle)
             dy = radius * np.sin(angle)
             glVertex2f(x + dx, y + dy)
